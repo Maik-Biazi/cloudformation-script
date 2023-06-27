@@ -8,20 +8,14 @@
                 "SecurityGroupIngress": [
                     {
                         "IpProtocol": "tcp",
-                        "FromPort": 80,
-                        "ToPort": 80,
+                        "FromPort": 22,
+                        "ToPort": 22,
                         "CidrIp": "0.0.0.0/0"
                     },
                     {
                         "IpProtocol": "tcp",
                         "FromPort": 443,
                         "ToPort": 443,
-                        "CidrIp": "0.0.0.0/0"
-                    },
-                    {
-                        "IpProtocol": "tcp",
-                        "FromPort": 22,
-                        "ToPort": 22,
                         "CidrIp": "0.0.0.0/0"
                     }
                 ]
@@ -41,19 +35,7 @@
                         "Value": "MinhaInstancia"
                     }
                 ],
-                "KeyName": "LinuxWordpress", 
-                "UserData": {
-                    "Fn::Base64": {
-                        "Fn::Join": [
-                            "",
-                            [
-                                "#!/bin/bash\n",
-                                "echo 'Hello, World!' > /var/www/html/index.html\n"
-                            ]
-                        ]
-                    }
-                },
-                "AssociatePublicIpAddress": true
+                "KeyName": "LinuxWordpress" 
             }
         }
     }
